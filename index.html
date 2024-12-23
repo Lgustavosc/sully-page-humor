@@ -1,346 +1,383 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<div class="flower">
+    <div class="flower-pp">
+        <div class="flower_l"></div>
+        <div class="f">
+            <div class="leaf leaf--1"></div>
+            <div class="leaf leaf--2"></div>
+            <div class="leaf leaf--3"></div>
+            <div class="leaf leaf--4"></div>
+            <div class="leaf leaf--5"></div>
+            <div class="leaf leaf--6"></div>
+            <div class="leaf leaf--7"></div>
+            <div class="leaf leaf--8 flower__fall-down--yellow"></div>
+        </div>
+    </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores Estilizadas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: #0b1a2d;
-            flex-wrap: wrap;
-            gap: 30px;
-            overflow: hidden;
-            position: relative;
-            font-family: 'Sacramento', cursive;
+    <div class="flower-pp flower-pp--2">
+        <div class="flower_l"></div>
+        <div class="f">
+            <div class="leaf leaf--1"></div>
+            <div class="leaf leaf--2"></div>
+            <div class="leaf leaf--3"></div>
+            <div class="leaf leaf--4"></div>
+            <div class="leaf leaf--5"></div>
+            <div class="leaf leaf--6"></div>
+            <div class="leaf leaf--7"></div>
+            <div class="leaf leaf--8 flower__fall-down--pink"></div>
+        </div>
+    </div>
+
+    <div class="flower-pp flower-pp--3">
+        <div class="flower_l"></div>
+        <div class="f">
+            <div class="leaf leaf--1"></div>
+            <div class="leaf leaf--2"></div>
+            <div class="leaf leaf--3"></div>
+            <div class="leaf leaf--4"></div>
+            <div class="leaf leaf--5"></div>
+            <div class="leaf leaf--6"></div>
+            <div class="leaf leaf--7"></div>
+            <div class="leaf leaf--8 flower__fall-down--purple"></div>
+        </div>
+    </div>
+    <div class="flower__glass"></div>
+</div>
+
+<style>
+    *,
+    *::after,
+    *::before {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+     :root {
+        --color-bg: linear-gradient(to top, #010329, #000005);
+        --color-glass: linear-gradient(to left, #142544, #1a9092);
+        --color-water: linear-gradient(to left, #142544, #1b6d6e);
+    }
+    
+    body {
+        background-image: var(--color-bg);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+    
+    .flower {
+        position: relative;
+    }
+    
+    .flower__glass {
+        width: 20vmin;
+        height: 30vmin;
+        background-image: var(--color-glass);
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+        opacity: .8;
+        position: relative;
+    }
+    
+    .flower__glass::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #182843;
+        width: 100%;
+        height: 2vmin;
+    }
+    
+    .flower__glass::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: var(--color-water);
+        width: 100%;
+        height: 15vmin;
+    }
+    
+    .flower-pp {
+        position: absolute;
+        left: 45%;
+        bottom: 2vmin;
+    }
+    
+    .flower-pp--2 {
+        left: 50%;
+        bottom: 5%;
+        transform-origin: 10% left;
+        transform: rotate(20deg);
+    }
+    
+    .flower-pp--3 {
+        left: 30%;
+        bottom: 5%;
+        transform-origin: 10% left;
+        transform: rotate(-10deg);
+    }
+    
+    .flower-pp--3 .flower_l {
+        height: 45vmin;
+        position: relative;
+    }
+    
+    .flower-pp--3 .flower_l::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 6vmin;
+        height: 6vmin;
+        transform: translate(-69%, -30%) rotate(-5deg);
+        border-radius: 10vmin 10vmin 0 0;
+        border: 2vmin solid #104d4e;
+        border-bottom: transparent;
+        border-left: transparent;
+    }
+    
+    .flower-pp--3 .flower_l::before {
+        content: '';
+        position: absolute;
+        left: -40%;
+        top: -1%;
+        width: 6vmin;
+        height: 2vmin;
+        transform-origin: right;
+        transform: translate(-100%, -80%) rotate(-20deg);
+        background-color: #104d4e;
+        border-radius: 2vmin;
+    }
+    
+    .flower-pp--3 .flower_l {
+        background-image: linear-gradient(to top, #142544, #104d4e);
+    }
+    
+    .flower-pp--2 .flower_l {
+        height: 45vmin;
+    }
+    
+    .flower-pp--2 .f {
+        transform: translateX(-50%) rotate(20deg);
+    }
+    
+    .flower-pp--3 .f {
+        transform: translate(-350%, -50%) rotate(-120deg);
+    }
+    
+    .flower-pp--2 .leaf:not(:first-child) {
+        width: 3.8vmin;
+        height: 10vmin;
+        background-image: linear-gradient(to bottom, #ff43b6, #c22887, #1a233a 99%);
+    }
+    
+    .flower-pp--3 .leaf:not(:first-child) {
+        width: 3.8vmin;
+        height: 10vmin;
+        background-image: linear-gradient(to bottom, #ad2be0, #712291, #1a233a 99%);
+    }
+    
+    .flower-pp--3 .leaf--1 {
+        width: 8vmin;
+        height: 10vmin;
+        bottom: 2vmin;
+        background-color: #ad2be0;
+    }
+    
+    .flower-pp--2 .leaf--1 {
+        width: 8vmin;
+        height: 10vmin;
+        bottom: 2vmin;
+        background-color: #de118b;
+    }
+    
+    .flower-pp--2 .f .leaf--8 {
+        width: 10vmin;
+        height: 9vmin;
+        bottom: 3vmin;
+        left: -30%;
+        transform: rotate(-50deg);
+        background-image: linear-gradient(to left bottom, #ff43b6, #4d1337);
+        ;
+    }
+    
+    .flower-pp--3 .f .leaf--8 {
+        width: 10vmin;
+        height: 9vmin;
+        left: -10% !important;
+        background-image: linear-gradient(to left bottom, #ad2be0, #712291);
+        ;
+    }
+    
+    .flower_l {
+        width: 2vmin;
+        height: 56vmin;
+        background-image: linear-gradient(to left top, #82fdff 20%, #142544, #104d4e);
+        border-radius: 4vmin;
+    }
+    
+    .f {
+        position: absolute;
+        top: 1vmin;
+        left: 50%;
+        transform: translateX(-50%) rotate(-10deg);
+        width: 2vmin;
+        height: 2vmin;
+    }
+    
+    .leaf {
+        position: absolute;
+        left: 50%;
+        bottom: 2vmin;
+        transform: translateX(-50%);
+        width: 5vmin;
+        height: 14vmin;
+        background-image: linear-gradient(to bottom, #ffa085, #fa7373, #1a233a 99%);
+        clip-path: ellipse(50% 50% at 50% 50%);
+        transform-origin: center bottom;
+        animation: open-flower 2s 1s backwards;
+    }
+    
+    .leaf--1 {
+        width: 10vmin;
+        height: 12vmin;
+        bottom: 3vmin;
+        border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+        background-color: #e24f5f;
+        background-image: none;
+        animation: open-flowe--middle 1.4s 1s backwards;
+    }
+    
+    .leaf--2 {
+        transform: translateX(-50%) rotate(-30deg);
+    }
+    
+    .leaf--3 {
+        transform: translateX(-50%) rotate(-50deg);
+    }
+    
+    .leaf--4 {
+        transform: translateX(-50%) rotate(-70deg);
+    }
+    
+    .leaf--5 {
+        transform: translateX(-50%) rotate(30deg);
+    }
+    
+    .leaf--6 {
+        transform: translateX(-50%) rotate(50deg);
+    }
+    
+    .leaf--7 {
+        transform: translateX(-50%) rotate(70deg);
+    }
+    
+    .leaf--8 {
+        width: 13vmin;
+        height: 11vmin;
+        bottom: 6vmin;
+        left: -30%;
+        border-radius: none;
+        clip-path: none;
+        border-radius: 10vmin 2vmin 10vmin 2vmin;
+        transform: rotate(-55deg);
+        background-image: linear-gradient(to left bottom, #ffa085, #eb8b8b, #492f2f 98%);
+    }
+    
+    .flower__fall-down--yellow {
+        animation: flower-fall-down-yellow 8s 1.2s linear forwards;
+    }
+    
+    .flower__fall-down--pink {
+        animation: flower-fall-down-pink 5s 1.2s linear forwards;
+    }
+    
+    .flower__fall-down--purple {
+        bottom: 4vmin;
+        animation: flower-fall-down-purple 6s 1.2s linear forwards, flower-falling 6s 7.2s linear infinite;
+    }
+    
+    @keyframes open-flower {
+        0% {
+            transform: translateX(-50%) rotate(0);
         }
-        /* Lua */
-        
-        .moon {
-            position: absolute;
-            top: 10%;
-            right: 10%;
-            width: 150px;
-            height: 150px;
-            background: #f0e68c;
-            border-radius: 50%;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
-            opacity: 0.7;
-        }
-        /* Estrelas */
-        
-        .star {
-            position: absolute;
-            background-color: #ffffff;
-            width: 25px;
-            height: 25px;
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            animation: twinkle 2s infinite ease-in-out;
-        }
-        /* Efeito de cintilação das estrelas */
-        
-        @keyframes twinkle {
-            0% {
-                opacity: 0.5;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0.5;
-            }
-        }
-        /* Geração das estrelas aleatórias com mais espaçamento */
-        
-        .star:nth-child(1) {
-            top: 5%;
-            left: 15%;
-            width: 40px;
-            height: 40px;
-        }
-        
-        .star:nth-child(2) {
-            top: 10%;
-            left: 30%;
-            width: 35px;
-            height: 35px;
-        }
-        
-        .star:nth-child(3) {
-            top: 15%;
-            left: 40%;
-            width: 50px;
-            height: 50px;
-        }
-        
-        .star:nth-child(4) {
-            top: 20%;
-            left: 60%;
-            width: 45px;
-            height: 45px;
-        }
-        
-        .star:nth-child(5) {
-            top: 30%;
-            left: 80%;
-            width: 40px;
-            height: 40px;
-        }
-        
-        .star:nth-child(6) {
-            top: 35%;
-            left: 15%;
-            width: 50px;
-            height: 50px;
-        }
-        
-        .star:nth-child(7) {
-            top: 40%;
-            left: 20%;
-            width: 35px;
-            height: 35px;
-        }
-        
-        .star:nth-child(8) {
-            top: 50%;
-            left: 30%;
-            width: 45px;
-            height: 45px;
-        }
-        
-        .star:nth-child(9) {
-            top: 55%;
-            left: 60%;
-            width: 50px;
-            height: 50px;
-        }
-        
-        .star:nth-child(10) {
-            top: 70%;
-            left: 70%;
-            width: 40px;
-            height: 40px;
-        }
-        
-        .star:nth-child(11) {
-            top: 75%;
-            left: 80%;
-            width: 45px;
-            height: 45px;
-        }
-        
-        .star:nth-child(12) {
-            top: 80%;
-            left: 25%;
-            width: 35px;
-            height: 35px;
-        }
-        /* Texto Yasmim */
-        
-        .text {
-            position: absolute;
-            top: 5%;
-            font-size: 70px;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
-            letter-spacing: 5px;
-            animation: glow 2s infinite alternate;
-        }
-        /* Animação de brilho da palavra Yasmim */
-        
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
-            }
-            100% {
-                text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 255, 255, 0.8);
-            }
-        }
-        /* Flores */
-        
-        .flower {
-            position: relative;
-            width: 100px;
-            height: 100px;
-            animation: spin 6s infinite linear;
-        }
-        
-        .petal {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            position: absolute;
+    }
+    
+    @keyframes open-flowe--middle {
+        0% {
             opacity: 0;
-            animation: bloomPetals 4s ease-out forwards;
+            transform: translateX(-50%) scale(0);
         }
-        /* Pétalas para a primeira flor (azul) */
-        
-        .flower1 .petal {
-            background: #6cf;
+    }
+    
+    @keyframes flower-fall-down-pink {
+        0% {
+            transform: rotate(-55deg);
         }
-        
-        .flower1 .petal1 {
-            top: 0;
-            left: 25px;
+        50% {
+            transform: rotateX(-100deg);
         }
-        
-        .flower1 .petal2 {
-            right: 0;
-            top: 25px;
+        100% {
+            transform: translate(2vmin, 28vmin);
         }
-        
-        .flower1 .petal3 {
-            bottom: 0;
-            left: 25px;
+    }
+    
+    @keyframes flower-fall-down-yellow {
+        0% {
+            transform: rotate(-55deg);
         }
-        
-        .flower1 .petal4 {
-            left: 0;
-            top: 25px;
+        50% {
+            bottom: 3vmin;
+            transform: rotateX(-100deg);
         }
-        /* Pétalas para a segunda flor (vermelha) */
-        
-        .flower2 .petal {
-            background: #e63946;
+        100% {
+            transform: translate(2vmin, 70vmin) rotate(150deg);
         }
-        
-        .flower2 .petal1 {
-            top: 0;
-            left: 25px;
+    }
+    
+    @keyframes flower-fall-down-purple {
+        0% {
+            transform: rotate(-50deg);
         }
-        
-        .flower2 .petal2 {
-            right: 0;
-            top: 25px;
+        25% {
+            bottom: 1vmin;
+            transform: rotateX(-100deg);
+            perspective: 0px;
         }
-        
-        .flower2 .petal3 {
-            bottom: 0;
-            left: 25px;
+        50% {
+            perspective: 0px;
+            transform: translate(-30vmin, 2vmin) rotate(90deg);
         }
-        
-        .flower2 .petal4 {
-            left: 0;
-            top: 25px;
+        75% {
+            perspective: 0px;
+            transform: translate(-34vmin, -2vmin);
         }
-        /* Pétalas para a terceira flor (roxa) */
-        
-        .flower3 .petal {
-            background: #923983;
+        100% {
+            transform-origin: center;
+            transform: translate(-34vmin, -2vmin) rotateY(-80deg) rotateX(35deg);
         }
-        
-        .flower3 .petal1 {
-            top: 0;
-            left: 25px;
+    }
+    
+    @keyframes flower-falling {
+        0%,
+        100% {
+            transform-origin: center;
+            transform: translate(-34vmin, -2vmin) rotateY(-80deg) rotateX(35deg);
         }
-        
-        .flower3 .petal2 {
-            right: 0;
-            top: 25px;
+        25% {
+            transform-origin: center;
+            transform: translate(-34.4vmin, -2vmin) rotateY(-84deg) rotateX(35deg);
         }
-        
-        .flower3 .petal3 {
-            bottom: 0;
-            left: 25px;
+        50% {
+            transform-origin: center;
+            transform: translate(-32vmin, -4.2vmin) rotateY(-80deg) rotateX(35deg);
         }
-        
-        .flower3 .petal4 {
-            left: 0;
-            top: 25px;
+        75% {
+            transform-origin: center;
+            transform: translate(-36vmin, 1.1vmin) rotateY(-80deg) rotateX(35deg);
         }
-        /* Centro das flores */
-        
-        .center {
-            width: 30px;
-            height: 30px;
-            background: #ffca28;
-            border-radius: 50%;
-            position: absolute;
-            top: 35px;
-            left: 35px;
-        }
-        /* Animação de rotação */
-        
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        /* Animação das pétalas para desabrochar */
-        
-        @keyframes bloomPetals {
-            0% {
-                opacity: 0;
-                transform: scale(0);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Lua -->
-    <div class="moon"></div>
-
-    <!-- Estrelas -->
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-
-    <!-- Texto Yasmim -->
-    <div class="text">Yasmim</div>
-
-    <!-- Flor azul -->
-    <div class="flower flower1">
-        <div class="petal petal1"></div>
-        <div class="petal petal2"></div>
-        <div class="petal petal3"></div>
-        <div class="petal petal4"></div>
-        <div class="center"></div>
-    </div>
-
-    <!-- Flor vermelha -->
-    <div class="flower flower2">
-        <div class="petal petal1"></div>
-        <div class="petal petal2"></div>
-        <div class="petal petal3"></div>
-        <div class="petal petal4"></div>
-        <div class="center"></div>
-    </div>
-
-    <!-- Flor roxa -->
-    <div class="flower flower3">
-        <div class="petal petal1"></div>
-        <div class="petal petal2"></div>
-        <div class="petal petal3"></div>
-        <div class="petal petal4"></div>
-        <div class="center"></div>
-    </div>
-</body>
-
-</html>
+    }
+</style>
